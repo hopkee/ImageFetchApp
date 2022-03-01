@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		357E64EA27CD9F330020C329 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357E64E927CD9F330020C329 /* Constants.swift */; };
 		358BD25627CD65C80030A33C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BD25527CD65C80030A33C /* AppDelegate.swift */; };
 		358BD25827CD65C80030A33C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BD25727CD65C80030A33C /* SceneDelegate.swift */; };
 		358BD25A27CD65C80030A33C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BD25927CD65C80030A33C /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		357E64E927CD9F330020C329 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		358BD25227CD65C80030A33C /* ImageFetchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFetchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		358BD25527CD65C80030A33C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		358BD25727CD65C80030A33C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		357E64EB27CD9F360020C329 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				357E64E927CD9F330020C329 /* Constants.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		358BD24927CD65C80030A33C = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +66,40 @@
 		358BD25427CD65C80030A33C /* ImageFetchApp */ = {
 			isa = PBXGroup;
 			children = (
-				358BD25527CD65C80030A33C /* AppDelegate.swift */,
-				358BD25727CD65C80030A33C /* SceneDelegate.swift */,
-				358BD25927CD65C80030A33C /* ViewController.swift */,
-				358BD25B27CD65C80030A33C /* Main.storyboard */,
+				357E64EB27CD9F360020C329 /* Data */,
+				358BD26B27CD66190030A33C /* App */,
+				358BD26A27CD66110030A33C /* Controllers */,
+				358BD26927CD660A0030A33C /* Views */,
 				358BD25E27CD65CA0030A33C /* Assets.xcassets */,
-				358BD26027CD65CA0030A33C /* LaunchScreen.storyboard */,
 				358BD26327CD65CA0030A33C /* Info.plist */,
 			);
 			path = ImageFetchApp;
+			sourceTree = "<group>";
+		};
+		358BD26927CD660A0030A33C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				358BD25B27CD65C80030A33C /* Main.storyboard */,
+				358BD26027CD65CA0030A33C /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		358BD26A27CD66110030A33C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				358BD25927CD65C80030A33C /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		358BD26B27CD66190030A33C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				358BD25527CD65C80030A33C /* AppDelegate.swift */,
+				358BD25727CD65C80030A33C /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +176,7 @@
 				358BD25A27CD65C80030A33C /* ViewController.swift in Sources */,
 				358BD25627CD65C80030A33C /* AppDelegate.swift in Sources */,
 				358BD25827CD65C80030A33C /* SceneDelegate.swift in Sources */,
+				357E64EA27CD9F330020C329 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
