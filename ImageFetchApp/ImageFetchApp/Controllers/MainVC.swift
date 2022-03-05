@@ -7,12 +7,17 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class MainVC: UIViewController {
 
     @IBOutlet weak private var imageView: UIImageView!
     
     @IBAction private func dwnlBtn() {
         fetchImages()
+    }
+    
+    
+    @IBAction func userListBtn() {
+        performSegue(withIdentifier: "GoToUserlist", sender: nil)
     }
     
     
@@ -58,6 +63,12 @@ final class ViewController: UIViewController {
         dialogMessage.addAction(ok)
       
         self.present(dialogMessage, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let usersVC = segue.destination as? UsersVC {
+            usersVC.fetchData()
+        }
     }
     
 }
