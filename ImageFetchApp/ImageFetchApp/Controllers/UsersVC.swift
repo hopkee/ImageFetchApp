@@ -39,6 +39,10 @@ class UsersVC: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(70)
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "GoToDetailedView", sender: indexPath.row)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -81,8 +85,6 @@ class UsersVC: UITableViewController {
         
         let task = URLSession.shared.dataTask(with: url) { (data, _, _) in
             
-            DispatchQueue.main.async {
-            
             guard let data = data else { return }
             do {
                 self.users = try JSONDecoder().decode([User].self, from: data)
@@ -90,6 +92,8 @@ class UsersVC: UITableViewController {
             } catch let error {
                 print(error)
             }
+            
+            DispatchQueue.main.async {
             self.tableView.reloadData()
             }
             
@@ -98,14 +102,14 @@ class UsersVC: UITableViewController {
         
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let detailedView = segue.destination as? UserDetailedVC,
+           let userId = sender as? Int {
+            detailedView.userId = userId
+            detailedView.fetchData()
+        }
     }
-    */
 
 }

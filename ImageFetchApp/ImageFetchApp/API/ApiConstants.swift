@@ -11,6 +11,7 @@ class ApiConstants {
     
     static let serverPath = "http://localhost:3000/"
     static let postPath = serverPath + "posts"
+    static let remotePostPath = "https://jsonplaceholder.typicode.com/posts"
     static let commentsPath = serverPath + "comments"
     static let postPathURL = URL(string: postPath)
     static let commentsPathURL = URL(string: commentsPath)

@@ -124,8 +124,8 @@
 			children = (
 				358BD25927CD65C80030A33C /* MainVC.swift */,
 				355220C527D2BFAF00547EC6 /* UsersVC.swift */,
-				355220C727D2C2FA00547EC6 /* UserCell.swift */,
 				355220CB27D2EE1E00547EC6 /* UserDetailedVC.swift */,
+				355220C727D2C2FA00547EC6 /* UserCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
