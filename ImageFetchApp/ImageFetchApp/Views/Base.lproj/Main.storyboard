@@ -184,10 +184,18 @@
                                                     <constraint firstAttribute="height" constant="300" id="Bgh-6Q-JzD"/>
                                                 </constraints>
                                             </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7z-PE-vom">
+                                                <rect key="frame" x="20" y="450.5" width="374" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
+                                            <constraint firstItem="w7z-PE-vom" firstAttribute="top" secondItem="mjD-h4-Kun" secondAttribute="bottom" id="53M-Ah-CSS"/>
                                             <constraint firstItem="mjD-h4-Kun" firstAttribute="top" secondItem="6aC-Nh-AQB" secondAttribute="bottom" id="GBX-Pb-dNa"/>
+                                            <constraint firstAttribute="trailing" secondItem="w7z-PE-vom" secondAttribute="trailing" constant="20" id="KoZ-dI-28J"/>
+                                            <constraint firstItem="w7z-PE-vom" firstAttribute="leading" secondItem="z7o-kB-nuv" secondAttribute="leading" constant="20" id="PiQ-Hx-sJc"/>
                                             <constraint firstAttribute="height" constant="1300" id="XGc-kO-Dz9"/>
                                             <constraint firstAttribute="trailing" secondItem="6aC-Nh-AQB" secondAttribute="trailing" constant="20" id="Z4T-Go-DHV"/>
                                             <constraint firstAttribute="trailing" secondItem="mjD-h4-Kun" secondAttribute="trailing" id="exD-XZ-ie1"/>
@@ -219,6 +227,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4Yg-IY-xye"/>
                     <connections>
+                        <outlet property="tableViewHeight" destination="Bgh-6Q-JzD" id="2dQ-hc-K98"/>
                         <outlet property="tableViewPosts" destination="mjD-h4-Kun" id="cQX-AL-Me6"/>
                         <outlet property="usernameLbl" destination="3Jh-vc-e2G" id="kSu-0V-SeW"/>
                     </connections>

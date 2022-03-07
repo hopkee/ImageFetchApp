@@ -94,7 +94,7 @@ class UsersVC: UITableViewController {
             }
             
             DispatchQueue.main.async {
-            self.tableView.reloadData()
+                self.tableView.reloadData()
             }
             
         }
@@ -107,7 +107,7 @@ class UsersVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailedView = segue.destination as? UserDetailedVC,
            let userId = sender as? Int {
-            detailedView.userId = userId
+            detailedView.user = users[userId]
             detailedView.fetchData()
         }
     }
