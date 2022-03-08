@@ -16,7 +16,7 @@ final class MainVC: UIViewController {
     }
     
     
-    @IBAction func userListBtn() {
+    @IBAction private func userListBtn() {
         performSegue(withIdentifier: "GoToUserlist", sender: nil)
     }
     

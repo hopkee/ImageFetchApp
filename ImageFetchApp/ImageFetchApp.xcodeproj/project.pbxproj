@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3505308927D6911400DE546C /* AllPostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3505308827D6911400DE546C /* AllPostsVC.swift */; };
+		3505308B27D6A8DA00DE546C /* AddNewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3505308A27D6A8DA00DE546C /* AddNewPostVC.swift */; };
+		3505308D27D6CC5C00DE546C /* DetailedPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3505308C27D6CC5C00DE546C /* DetailedPostView.swift */; };
 		355220BE27D2B8C100547EC6 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355220BD27D2B8C100547EC6 /* ApiConstants.swift */; };
 		355220C027D2B8D400547EC6 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355220BF27D2B8D400547EC6 /* ApiService.swift */; };
 		355220C327D2B9BC00547EC6 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355220C227D2B9BC00547EC6 /* Models.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3505308827D6911400DE546C /* AllPostsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPostsVC.swift; sourceTree = "<group>"; };
+		3505308A27D6A8DA00DE546C /* AddNewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddNewPostVC.swift; path = ImageFetchApp/Views/AddNewPostVC.swift; sourceTree = SOURCE_ROOT; };
+		3505308C27D6CC5C00DE546C /* DetailedPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPostView.swift; sourceTree = "<group>"; };
 		355220BD27D2B8C100547EC6 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		355220BF27D2B8D400547EC6 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		355220C227D2B9BC00547EC6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -126,9 +132,12 @@
 		358BD26A27CD66110030A33C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3505308A27D6A8DA00DE546C /* AddNewPostVC.swift */,
 				358BD25927CD65C80030A33C /* MainVC.swift */,
 				355220C527D2BFAF00547EC6 /* UsersVC.swift */,
+				3505308C27D6CC5C00DE546C /* DetailedPostView.swift */,
 				355220CB27D2EE1E00547EC6 /* UserDetailedVC.swift */,
+				3505308827D6911400DE546C /* AllPostsVC.swift */,
 				355220C727D2C2FA00547EC6 /* UserCell.swift */,
 			);
 			path = Controllers;
@@ -229,10 +238,13 @@
 				355220C627D2BFAF00547EC6 /* UsersVC.swift in Sources */,
 				355220BE27D2B8C100547EC6 /* ApiConstants.swift in Sources */,
 				355220C927D2C2FA00547EC6 /* UserCell.swift in Sources */,
+				3505308D27D6CC5C00DE546C /* DetailedPostView.swift in Sources */,
 				358BD25827CD65C80030A33C /* SceneDelegate.swift in Sources */,
 				357E64EA27CD9F330020C329 /* Constants.swift in Sources */,
 				355220C327D2B9BC00547EC6 /* Models.swift in Sources */,
+				3505308927D6911400DE546C /* AllPostsVC.swift in Sources */,
 				355220CC27D2EE1E00547EC6 /* UserDetailedVC.swift in Sources */,
+				3505308B27D6A8DA00DE546C /* AddNewPostVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

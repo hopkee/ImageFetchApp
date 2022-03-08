@@ -37,7 +37,7 @@ struct Geo: Decodable {
     let lng: String?
 }
 
-struct Post: Decodable {
+struct Post: Decodable, Encodable {
     let userId: Int?
     let id: Int?
     let title: String?

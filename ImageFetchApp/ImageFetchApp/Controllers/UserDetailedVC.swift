@@ -15,6 +15,15 @@ final class UserDetailedVC: UIViewController {
     @IBOutlet weak private var tableViewPosts: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
+    
+    @IBAction func addNewPostAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "GoToAddNewPost", sender: nil)
+    }
+    
+    @IBAction func viewAllPostsAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "GoToAllPosts", sender: nil)
+    }
+    
     var user: User?
     private var latestUserPosts: [Post] = []
     
@@ -26,13 +35,14 @@ final class UserDetailedVC: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.updateViewConstraints()
-        self.tableViewHeight?.constant = self.tableViewPosts.contentSize.height + 65
+        self.tableViewHeight?.constant = self.tableViewPosts.contentSize.height
     }
     
     private func setUpTableView() {
         tableViewPosts.delegate = self
         tableViewPosts.dataSource = self
         tableViewPosts.separatorStyle = .singleLine
+        tableViewPosts.contentInset = UIEdgeInsets(top: -27, left: 0, bottom: 0, right: 0)
     }
     
     private func setUpUI() {
@@ -43,10 +53,11 @@ final class UserDetailedVC: UIViewController {
     }
     
     func fetchData() {
+        
         if let user = self.user,
            let userId = user.id,
-           let url = URL(string: ApiConstants.remotePostPath + "?userId=" + String(userId)) {
-        
+           let url = URL(string: ApiConstants.postPath + "?userId=" + String(userId) + "&_sort=id&_order=desc") {
+
         AF.request(url, method: .get).responseData { response in
             switch response.result {
             case .success(let data):
@@ -64,34 +75,53 @@ final class UserDetailedVC: UIViewController {
             case .failure(let error):
                 print(error)
                 }
+            }
         }
-//        let url = URL(string: ApiConstants.remotePostPath + "?userId=" + String(self.userId!))!
-//
-//        let task = URLSession.shared.dataTask(with: url) { (data, _, _) in
-//
-//            guard let data = data else { return }
-//            do {
-//                    self.latestUserPosts = try JSONDecoder().decode([Post].self, from: data)
-//
-//            } catch let error {
-//                print(error)
-//            }
-//
-//            DispatchQueue.main.async {
-//            self.tableViewPosts.reloadData()
-//            }
-//
-//        }
-//        task.resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let allPostsVC = segue.destination as? AllPostsVC,
+           let userId = self.user?.id {
+            allPostsVC.userId = userId
+            allPostsVC.userName = self.user?.name
+            allPostsVC.fetchData()
+            allPostsVC.isDismissedForUserDetailView = { [weak self] in
+                self?.latestUserPosts = []
+                self?.fetchData()
+             }
+        }
+        
+        if let addNewPostVC = segue.destination as? AddNewPostVC,
+           let userId = self.user?.id {
+            addNewPostVC.userId = userId
+            addNewPostVC.isDismissed = { [weak self] in
+                self?.latestUserPosts = []
+                self?.fetchData()
+             }
+        }
+        
+        if let detailedPostVC = segue.destination as? DetailedPostView,
+           let post = sender as? Post,
+           let username = user?.name {
+            detailedPostVC.post = post
+            detailedPostVC.username = username
+            detailedPostVC.isModalWasClosed = { [weak self] in
+                self?.latestUserPosts = []
+                self?.fetchData()
+            }
         }
         
     }
     
-
 }
+    
 
 extension UserDetailedVC: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "GoToDetailedPostView", sender: latestUserPosts[indexPath.row])
+    }
     
 }
 

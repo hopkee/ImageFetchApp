@@ -7,15 +7,14 @@
 
 import UIKit
 
-class UserCell: UITableViewCell {
+final class UserCell: UITableViewCell {
 
-    @IBOutlet weak var userNameLbl: UILabel!
-    @IBOutlet weak var phoneLbl: UILabel!
-    @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak private var userNameLbl: UILabel!
+    @IBOutlet weak private var phoneLbl: UILabel!
+    @IBOutlet weak private var emailLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func configure(_ user: User) {
